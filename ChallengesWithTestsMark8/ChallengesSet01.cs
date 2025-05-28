@@ -44,13 +44,12 @@ namespace ChallengesWithTestsMark8
             if (nameOfPerson == "")
                 return "Hello!";
             else
-                nameOfPerson = "Hello, " + nameOfPerson + "!";
-                return nameOfPerson;
+                return $"Hello, {nameOfPerson}!";
         }
 
         public string GetHey()
         {
-            throw new NotImplementedException();
+            return "HEY!";
         }
     }
 }
