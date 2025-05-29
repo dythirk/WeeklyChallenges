@@ -60,11 +60,17 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            return numbers.Sum();
+            if (numbers == null || numbers.Length == 0)
+                return 0;
+            else
+                return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
+            if (numbers == null || numbers.Length == 0)
+                return 0;
+
             var total = 0;
             foreach (int i in numbers)
             {
@@ -76,7 +82,7 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOdd(List<int> numbers)
         {
-            if (numbers == null)
+            if (numbers == null || numbers.Length == 0)
                 return false;
             else
                 return (numbers.Sum() % 2 != 0);
