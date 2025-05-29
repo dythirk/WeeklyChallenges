@@ -13,20 +13,13 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            //if (numbers == null)
-            //    return false;
-            //else
-            //{
-            //    int total = 0;
-            //    foreach (int n in numbers)
-            //    {
-            //        if (numbers(n) % 2 == 0)
-            //            total += numbers[n];
-            //    }
-            //}
-            throw new NotImplementedException();
-
-
+            if (numbers == null)
+                return false;
+            else
+            {
+                IEnumerable<int> result = numbers.Where((n, i) => n % 2 != 0);
+                return (result.Sum() % 2 != 0);
+            }
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
