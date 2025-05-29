@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -10,9 +11,14 @@ namespace ChallengesWithTestsMark8
             return Char.IsLetter(c);
         }
 
+        public bool CharacterIsNotALetter(char c)
+        {
+            return !Char.IsLetter(c);
+        }
+
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            return (vals.Count() % 2 == 0);
         }
 
         public bool IsNumberEven(int number)
