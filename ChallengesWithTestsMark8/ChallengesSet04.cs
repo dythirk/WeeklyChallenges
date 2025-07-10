@@ -29,7 +29,10 @@ namespace ChallengesWithTestsMark8
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+            string[] foo = new string[] { str1, str2, str3, str4 };
+            foo = foo.OrderByDescending(x => x).ToArray();
+            return foo[3].Length;
+
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
@@ -108,7 +111,6 @@ namespace ChallengesWithTestsMark8
             {
                 fact *= i;
             }
-
             return fact;
         }
     }
