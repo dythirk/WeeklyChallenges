@@ -49,7 +49,6 @@ namespace ChallengesWithTestsMark8
 
             int[] sorted = triangle.OrderByDescending(x => x).ToArray();
 
-
             if ((sideLength1 <= 0) || (sideLength2 <= 0) || (sideLength3 <= 0))
                 return false;
             else if ((sideLength1 == sideLength2) && (sideLength1 + sideLength2 > sideLength3))
@@ -61,7 +60,6 @@ namespace ChallengesWithTestsMark8
             else if (sorted[1] + sorted[2] > sorted[0])
                 return true;
             else return false;
-
         }
 
         public bool IsStringANumber(string input)
@@ -103,7 +101,15 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            if (number == 0)
+                return 1;
+            int fact = 1;
+            for (int i = 1; i < number + 1; i++)
+            {
+                fact *= i;
+            }
+
+            return fact;
         }
     }
 }
