@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Transactions;
 
 namespace ChallengesWithTestsMark8
 {
@@ -69,7 +70,11 @@ namespace ChallengesWithTestsMark8
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            if (input == null) return false;
+            else 
+                return double.TryParse(input, out _);
+
+
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
