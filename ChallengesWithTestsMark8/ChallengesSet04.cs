@@ -57,7 +57,29 @@ namespace ChallengesWithTestsMark8
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers?.Length > 0)
+            {
+                double tally = 0;
+                double sum = 0;
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] % 2 == 0)
+                    {
+                        tally++;
+                        sum += numbers[i];
+                    }
+                }
+                if (tally == 0)
+                    return 0;
+                else
+                {
+                    return sum / tally;
+
+                }
+            }
+            else
+                return 0;
+
         }
 
         public int Factorial(int number)
