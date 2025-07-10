@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Immutable;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -37,12 +39,29 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";
+
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            int[] triangle = new int[] { sideLength1, sideLength2, sideLength3};
+
+            int[] sorted = triangle.OrderByDescending(x => x).ToArray();
+
+
+            if ((sideLength1 <= 0) || (sideLength2 <= 0) || (sideLength3 <= 0))
+                return false;
+            else if ((sideLength1 == sideLength2) && (sideLength1 + sideLength2 > sideLength3))
+                return true;
+            else if ((sideLength1 == sideLength3) && (sideLength1 + sideLength3 > sideLength2))
+                return true;
+            else if ((sideLength2 == sideLength3) && (sideLength2 + sideLength3 > sideLength1))
+                return true;
+            else if (sorted[1] + sorted[2] > sorted[0])
+                return true;
+            else return false;
+
         }
 
         public bool IsStringANumber(string input)
