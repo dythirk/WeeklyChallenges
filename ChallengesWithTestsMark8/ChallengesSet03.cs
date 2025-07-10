@@ -51,7 +51,9 @@ namespace ChallengesWithTestsMark8
 
         public int LastMinusFirst(int[] nums)
         {
-            return nums[nums.Length - 1] - nums[0];
+            //double sum = (double)(nums.Sum());
+            //return (int)(sum /nums.Length);
+            return (nums[nums.Length - 1] - nums[0]);
         
         }
 
