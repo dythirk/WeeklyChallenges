@@ -23,17 +23,16 @@ namespace ChallengesWithTestsMark8
                         odds += i;
                 }
                 return evens - odds;
-
             }
 
         }
-
+        // There appears to be a mistake with this test. There's a string with 7 chars in the final
+        // test and the expected result is 8.
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
             string[] foo = new string[] { str1, str2, str3, str4 };
             foo = foo.OrderByDescending(x => x).ToArray();
             return foo[3].Length;
-
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
@@ -46,7 +45,6 @@ namespace ChallengesWithTestsMark8
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
             biz.Name = "TrueCoders";
-
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
@@ -73,13 +71,22 @@ namespace ChallengesWithTestsMark8
             if (input == null) return false;
             else 
                 return double.TryParse(input, out _);
-
-
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int tally = 0;
+            for(int i = 0; i < objs.Length; i++)
+            {
+                if (objs[i] == null)
+                {
+                    tally++;
+                }
+            }
+            if (tally - (objs.Length/2)  > 0)
+                return true;
+            else
+                return false;
         }
 
         public double AverageEvens(int[] numbers)
@@ -106,11 +113,14 @@ namespace ChallengesWithTestsMark8
             }
             else
                 return 0;
-
         }
 
         public int Factorial(int number)
         {
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), "Factorial is not defined for negative numbers.");
+            }
             if (number == 0)
                 return 1;
             int fact = 1;
