@@ -6,17 +6,13 @@ namespace ChallengesWithTestsMark8
     public class ChallengesSet05
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
-        {
-                
+        {                
             startNumber++;
             for (int i = startNumber; true; i++) 
             {
                 if (i % n == 0)
-                    return i;
-                
+                    return i;                
             }
-
-
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
@@ -26,16 +22,12 @@ namespace ChallengesWithTestsMark8
                 if (bus.TotalRevenue == 0)
                     bus.Name = "CLOSED";
             }
-
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
             if (numbers == null || numbers.Length == 0)
                 return false;
-            
-
-
             else
             {
                 int tally = numbers[0];
@@ -50,7 +42,6 @@ namespace ChallengesWithTestsMark8
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-
             if (numbers == null || numbers.Length == 0)
                 return 0;
             else 
@@ -80,8 +71,7 @@ namespace ChallengesWithTestsMark8
                 if (sentence == "")
                     return "";
                 sentence = sentence.Trim() + ".";
-                return sentence;
-            
+                return sentence;            
             }
         }
 
@@ -99,12 +89,23 @@ namespace ChallengesWithTestsMark8
                 }
                 return quad.ToArray();
             }
-                throw new NotImplementedException();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            if (nums == null || nums.Length == 0)
+                return false;
+            if (nums.Length == 1)
+                return false;
+            for (int i = 0; i < nums.Length; i++) 
+            {
+                for (int j = i+1; j < nums.Length; j++) 
+                {
+                    if (nums[i] + nums[j] == targetNumber)
+                        return true;
+                }
+            }
+            return false;
         }
     }
 }
