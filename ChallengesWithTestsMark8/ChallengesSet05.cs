@@ -7,22 +7,62 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            throw new NotImplementedException();
+                
+            startNumber++;
+            for (int i = startNumber; true; i++) 
+            {
+                if (i % n == 0)
+                    return i;
+                
+            }
+
+
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            throw new NotImplementedException();
+            foreach (Business bus in businesses)
+            {
+                if (bus.TotalRevenue == 0)
+                    bus.Name = "CLOSED";
+            }
+
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+                return false;
+            
+
+
+            else
+            {
+                int tally = numbers[0];
+                for (int i = 0; i < numbers.Length-1; i++) 
+                {
+                    if (numbers[i] > numbers[i+1])
+                        return false;
+                }
+                return true;
+            }
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            throw new NotImplementedException();
+
+            if (numbers == null || numbers.Length == 0)
+                return 0;
+            else 
+            {
+                int tally = 0;
+                for (int i = 0; i < numbers.Length - 1; i++)
+                {
+                    if (numbers[i] % 2 == 0)
+                        tally += numbers[i + 1];
+                }
+                return tally;
+            }
         }
 
         public string TurnWordsIntoSentence(string[] words)
