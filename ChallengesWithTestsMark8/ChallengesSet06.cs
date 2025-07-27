@@ -29,11 +29,8 @@ namespace ChallengesWithTestsMark8
                             return true;
                     }
                 }
-
             return false;
-
         }
-
         public bool IsPrimeNumber(int num)
         {
             if (num <= 1) 
@@ -52,7 +49,6 @@ namespace ChallengesWithTestsMark8
             }
             return true;
         }
-
         public int IndexOfLastUniqueLetter(string str)
         {
             if (str == "")
@@ -67,7 +63,6 @@ namespace ChallengesWithTestsMark8
             }
             return position;
         }
-
         public int MaxConsecutiveCount(int[] numbers)
         {
             int winner = 0;
@@ -81,12 +76,10 @@ namespace ChallengesWithTestsMark8
                 }
             }
             return 0;
-
         }
-
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            if ((elements.Count == 0) || (n <= 0) || (elements == null) || (!elements.Any()))
+            if ((elements.Count == 0) || (n <= 0) || (elements is not { Count: > 0 }) || (!elements.Any()))
                     return new double[] { };
 
             List<double> result = new List<double>();
