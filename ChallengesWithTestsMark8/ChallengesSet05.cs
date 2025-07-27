@@ -83,12 +83,23 @@ namespace ChallengesWithTestsMark8
                 return sentence;
             
             }
-                throw new NotImplementedException();
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            if (elements == null || elements.Count == 0) 
+                return new double[0];
+            else 
+            {
+                List<double> quad = new List<double>();
+                for (int i = 0; i < elements.Count; i++)
+                {
+                    if ((i+1) % 4 == 0)
+                        quad.Add(elements[i]);
+                }
+                return quad.ToArray();
+            }
+                throw new NotImplementedException();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
