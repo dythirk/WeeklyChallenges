@@ -9,7 +9,29 @@ namespace ChallengesWithTestsMark8
     {
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            throw new NotImplementedException();
+            if (words is null)
+                return false;
+            if (ignoreCase)
+                foreach (string comp in words)
+                {
+                    if (comp is not null)
+                    {
+                        if (comp.ToLower().Equals(word.ToLower()))
+                            return true;
+                    }
+                }
+            else
+                foreach (string comp in words)
+                {
+                    if (comp is not null)
+                    {
+                        if (comp.Equals(word))
+                            return true;
+                    }
+                }
+
+            return false;
+
         }
 
         public bool IsPrimeNumber(int num)
