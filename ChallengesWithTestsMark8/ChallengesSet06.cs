@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ChallengesWithTestsMark8
@@ -65,15 +66,12 @@ namespace ChallengesWithTestsMark8
         }
         public int MaxConsecutiveCount(int[] numbers)
         {
-
             int tally = 0;
             int max = 0;
             for (int i = 1; i < numbers.Length; i++) 
             {
-
                 if (numbers[i] == numbers[i - 1])
                 {
-
                     tally++;
                 }
                 else
@@ -81,8 +79,6 @@ namespace ChallengesWithTestsMark8
                 if (max < tally)
                 {
                     max = tally;
-
-
                 }
             }
             max++;
@@ -90,19 +86,33 @@ namespace ChallengesWithTestsMark8
         }
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            if ((elements.Count == 0) || (n <= 0) || (elements is not { Count: > 0 }) || (!elements.Any()))
-                    return new double[] { };
+            if ((n <= 0) || (elements.Count == 0) || (elements is not { Count: > 0 }) || (!elements.Any()))                    
+                return new double[] { };
+            if (elements.Count == 0)
+                return new double[] { }; 
+            if (elements is not { Count: > 0 })
+                return new double[] { }; 
+            if (!elements.Any())
+                return new double[] { };
+            if (!(elements != null))
+                return new double[] { };
+            if (elements is not null)
+                return new double[] { };
+
+            // I give up, I can not for the life of me get a null entry to return an empty array.
+            // I am submitting this so you can tell me what I'm doing wrong. As you can tell, I've tried a lot of things.
+
             if (n == 1)
                 return elements.ToArray();
+
+
+                
             List<double> result = new List<double>();
             for (int i = 0; i < elements.Count; i++)
             {
-                while ((elements[i] != null) && (elements[i + 1] != null)) 
-                { 
-                
+
                     if ((i + 1) % n == 0)
                         result.Add(elements[i]);
-                }
 
             }   
             return result.ToArray();
