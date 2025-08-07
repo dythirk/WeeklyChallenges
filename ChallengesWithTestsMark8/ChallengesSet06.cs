@@ -87,8 +87,15 @@ namespace ChallengesWithTestsMark8
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
             if (elements == null || n <= 0 || n > elements.Count)
-                return Array.Empty<double>();
+                return new double[] { };
 
+            // ALSO VIABLE
+            //if (elements == null || n <= 0 || n > elements.Count)
+            //    return Array.Empty<double>();
+
+
+
+            // DDES NOT WORK
             //if ((n <= 0) || (elements.Count == 0) || (elements is not { Count: > 0 }) || (!elements.Any()))
             //    return new double[] { };
             //if (elements == 0)
@@ -104,12 +111,8 @@ namespace ChallengesWithTestsMark8
             //if (elements is not null)
             //    return new double[] { };
 
-            // I give up, I can not for the life of me get a null entry to return an empty array.
-            // I am submitting this so you can tell me what I'm doing wrong. As you can tell, I've tried a lot of things.
-
             if (n == 1)
                 return elements.ToArray();
-
                 
             List<double> result = new List<double>();
             for (int i = 0; i < elements.Count; i++)
